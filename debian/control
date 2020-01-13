@@ -1,0 +1,27 @@
+Source: python-tempita
+Section: python
+Priority: optional
+Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Uploaders:
+ Ondřej Kobližek <koblizeko@gmail.com>,
+Build-Depends:
+ debhelper-compat (= 12),
+ dh-python,
+Build-Depends-Indep:
+ python3,
+ python3-nose,
+ python3-setuptools,
+Standards-Version: 4.4.1
+Vcs-Git: https://salsa.debian.org/python-team/modules/python-tempita.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/python-tempita
+
+Package: python3-tempita
+Architecture: all
+Depends:
+ ${misc:Depends},
+ ${python3:Depends},
+Description: very small text templating language - Python 3.x
+ Tempita is a small and simple Python text templating language mainly used
+ by Paster (python-pastescript) to roll out new projects.
+ .
+ This package contains the Python 3.x module.

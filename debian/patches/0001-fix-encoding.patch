@@ -1,0 +1,47 @@
+From 22312bb50f8fd9692bbb54b237492b32eb30e2dd Mon Sep 17 00:00:00 2001
+From: Sascha Steinbiss <satta@debian.org>
+Date: Sun, 26 Feb 2017 16:55:35 +0000
+Subject: fix encoding
+
+Addresses #750895 by backporting upstream's fix.
+---
+ tempita/__init__.py | 4 +++-
+ tempita/compat3.py  | 4 +++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/tempita/__init__.py b/tempita/__init__.py
+index 91407b3..031399f 100644
+--- a/tempita/__init__.py
++++ b/tempita/__init__.py
+@@ -37,7 +37,7 @@ import os
+ import tokenize
+ from cStringIO import StringIO
+ from tempita._looper import looper
+-from tempita.compat3 import bytes, basestring_, next, is_unicode, coerce_text
++from tempita.compat3 import PY3, bytes, basestring_, next, is_unicode, coerce_text
+ 
+ __all__ = ['TemplateError', 'Template', 'sub', 'HTMLTemplate',
+            'sub_html', 'html', 'bunch']
+@@ -143,6 +143,8 @@ class Template(object):
+         f.close()
+         if encoding:
+             c = c.decode(encoding)
++        elif PY3:
++            c = c.decode('latin-1')
+         return cls(content=c, name=filename, namespace=namespace,
+                    default_inherit=default_inherit, get_template=get_template)
+ 
+diff --git a/tempita/compat3.py b/tempita/compat3.py
+index 5e18fa0..63098e4 100644
+--- a/tempita/compat3.py
++++ b/tempita/compat3.py
+@@ -1,6 +1,8 @@
+ import sys
+ 
+-__all__ = ['b', 'basestring_', 'bytes', 'next', 'is_unicode']
++__all__ = ['PY3', 'b', 'basestring_', 'bytes', 'next', 'is_unicode']
++
++PY3 = True if sys.version_info[0] == 3 else False
+ 
+ if sys.version < "3":
+     b = bytes = str

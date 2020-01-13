@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+
+import os
+from tempita import Template as t
+
+tmpldir = os.path.dirname(os.path.realpath(__file__))
+w = t.from_filename(os.path.join(tmpldir, "test.tmpl"))
+print(str(w.substitute()))
+
+w = t.from_filename(os.path.join(tmpldir, "test.tmpl"), encoding='utf-8')
+print(str(w.substitute()))

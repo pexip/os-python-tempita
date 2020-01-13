@@ -1,0 +1,141 @@
+python-tempita (0.5.2-6) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Sandro Tosi ]
+  * Drop python2 support; Closes: #938211
+
+ -- Sandro Tosi <morph@debian.org>  Sun, 12 Jan 2020 19:52:27 -0500
+
+python-tempita (0.5.2-5) unstable; urgency=medium
+
+  * Team upload.
+  * Restore Python 2 support for now, as python-paste depends on it.
+
+ -- Andrey Rahmatullin <wrar@debian.org>  Thu, 26 Sep 2019 23:23:00 +0500
+
+python-tempita (0.5.2-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Kobližek ]
+  * d/control: Remove Piotr and Christoph from Uploaders after ITA
+
+  [ Andrey Rahmatullin ]
+  * Drop Python 2 support (Closes: #938211).
+
+ -- Andrey Rahmatullin <wrar@debian.org>  Tue, 24 Sep 2019 12:24:09 +0500
+
+python-tempita (0.5.2-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/control: Remove ancient X-Python-Version field
+  * Convert git repository from git-dpm to gbp layout
+
+  [ Ondřej Kobližek ]
+  * New maintainer (Closes: #740534)
+  * d/control:
+    - Add myself as Uploader
+    - Add python-nose dependency
+    - Bump Standarts-Version to 4.4.0 (no changes needed)
+    - Bump debhelper compat level to 12
+    - Edit Descriptions to distinguish between the packages
+    - Remove commented code
+    - Remove obsolete build depends version restrictions
+  * d/copyright: machine-readable format
+  * d/watch:
+    - Bump version to 4
+    - Use HTTPS rather than HTTP
+  * d/dirs: Remove (no needed)
+  * d/rules:
+    - Remove dead/commented code
+    - use pybuild
+  * wrap and sort
+
+ -- Ondřej Kobližek <koblizeko@gmail.com>  Wed, 17 Jul 2019 22:23:02 +0200
+
+python-tempita (0.5.2-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Migrate from DPMT svn to DPMT git
+  * Fixed VCS URL (https)
+
+  [ Sascha Steinbiss ]
+  * Address encoding issue on Python 3 by backporting a patch from
+    upstream (Closes: #750895)
+    - Add an autopkgtest
+
+  [ Simon McVittie ]
+  * Correct backported patch to not double-decode strings if an encoding
+    was specified
+  * Add missing build-dependency on dh-python for dh_python3
+  * Add build-arch and build-indep targets to debian/rules
+
+ -- Simon McVittie <smcv@debian.org>  Sun, 05 Mar 2017 15:48:07 +0000
+
+python-tempita (0.5.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 17 Dec 2013 19:39:51 +0100
+
+python-tempita (0.5.1-1) unstable; urgency=low
+
+  * New upstream release (closes: #599645)
+    - add python3-tempita binary package
+    - no longer ships documentation
+  * Switch from dh_pysupport to dh_python2
+  * Source format changed to 3.0 (quilt)
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 14 Jun 2011 22:08:22 +0200
+
+python-tempita (0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standards-Version to 3.8.1 (no changes needed)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 21 Apr 2009 19:50:54 +0200
+
+python-tempita (0.3-1) unstable; urgency=low
+
+  [ Sandro Tosi ]
+  * debian/control
+    - switch Vcs-Browser field to viewsvn
+
+  [ Piotr Ożarowski ]
+  * New upstream release
+  * Build docs using Sphinx:
+    + python-sphinx added to build dependencies
+    + new suggested package: libjs-jquery
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat, 22 Nov 2008 21:32:52 +0100
+
+python-tempita (0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * python, python-all-dev, python-support, and python-setuptools build
+    dependencies moved to Build-Depends-Indep
+  * Vcs-Svn and Vcs-Browser fields added in debian/control
+  * debian/watch file added
+  * Bump Standards-Version to 3.8.0 (no changes needed)
+  * Change Priority to optional
+  * Move team name to Maintainer field, add myself to Uploaders
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 22 Jul 2008 23:37:59 +0200
+
+python-tempita (0.1-2) unstable; urgency=low
+
+  * Removed unused remains of dpatch from debian/rules (Closes: #482204)
+
+ -- Christoph Haas <haas@debian.org>  Wed, 21 May 2008 20:15:04 +0200
+
+python-tempita (0.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #476831)
+
+ -- Christoph Haas <haas@debian.org>  Sat, 19 Apr 2008 14:47:06 +0200

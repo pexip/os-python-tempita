@@ -1,3 +1,9 @@
+python-tempita (0.5.2-6pexip1) pexip; urgency=medium
+
+  * Prepare Pexip packaging
+
+ -- Huw Jones <huw@pexip.com>  Tue, 15 Jun 2021 11:46:53 +0000
+
 python-tempita (0.5.2-6) unstable; urgency=medium
 
   [ Ondřej Nový ]
